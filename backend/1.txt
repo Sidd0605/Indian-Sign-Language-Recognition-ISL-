@@ -1,0 +1,66 @@
+@app.route("/upload", methods=["POST"])
+def upload_crop_image():
+    # after dataset is acquired, then use if else to take in different crop_names
+    if 'file' not in request.files:
+        raise PostValidationErorr(status_code=404, erorr_code ="BE1003", error_message="Image file is not uploaded")
+    img = request.files['file']
+    print(img.filename, img.content_type)
+    model = YOLO("pretrained_models/best.pt") 
+    print(model.__class__.__name__.split(".")[-1])
+
+    img = Image.open(BytesIO(img.read()))
+
+    # res = model.predict(img, save=True, save_dir="runs/detect/predict")
+    # res = model.predict(img, save=True)
+    # print(res)
+    # # res.save("C:/Users/MENGDE/Desktop/Plant Disease Detection/backend/images")
+    # return "Model works"
+
+    res = model.predict(img, save=True, save_dir="runs/detect/predict5")
+    print(res)
+
+    annotated_image = res[0]['orig_img']
+    print(annotated_image)
+
+    # Generate a secure filename
+    # filename = secure_filename(img.filename)
+
+    # Save the annotated image with a secure filename
+    # annotated_image.save(f"runs/detect/predict5/image.jpg")
+    return "Model works"
+
+
+
+
+
+
+
+
+
+
+
+
+    @app.route("/upload", methods=["POST"])
+def upload_crop_image():
+    # after dataset is acquired, then use if else to take in different crop_names
+    if 'file' not in request.files:
+        raise PostValidationErorr(status_code=404, erorr_code ="BE1003", error_message="Image file is not uploaded")
+    img = request.files['file']
+    print(img.filename, img.content_type)
+
+    model = YOLO("pretrained_models/best.pt") 
+    print(model.__class__.__name__.split(".")[-1])
+
+    img = Image.open(BytesIO(img.read()))
+    res = model.predict(img, save=True, save_dir="runs/detect/predict5")
+    print(res)
+
+    image_matrix = res.orig_img
+    image = np.array(image_matrix, dtype=np.uint8)
+
+    save_path = '/images'  
+    image_name = 'output_image.jpg' 
+
+    cv2.imwrite(save_path + image_name, cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+
+    return "Model works"

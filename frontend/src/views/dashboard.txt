@@ -1,0 +1,34 @@
+<template>
+  <div class="dashboard">
+    <h2>Dashboard</h2>
+    <div class="content mt-5">Please click on the crop which you need detection with. And then upload your image on next page</div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-4"><router-link :to="{ name: 'Crop', params: { crop_name: 'Crop1' } }">Crop1</router-link></div>
+            <div class="col-sm-4"><router-link :to="{ name: 'Crop', params: { crop_name: 'Crop2' } }">Crop2</router-link></div>
+            <div class="col-sm-4"><router-link :to="{ name: 'Crop', params: { crop_name: 'Crop3' } }">Crop3</router-link></div>
+            <!-- <div class="col-sm-4">Crop1</div>
+            <div class="col-sm-4">Crop2</div>
+            <div class="col-sm-4">Crop3</div> -->
+        </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+    name: "Dashboard",
+}
+</script>
+
+<style scoped>
+h2 {
+    text-align: center;
+}
+.content {
+    text-align: center;
+}
+.row {
+    text-align: center;
+}
+</style>

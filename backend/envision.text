@@ -1,0 +1,28 @@
+Backend:-
+Models:- User, Discussion(if user present(post) or else just view), prompts/presistence for chatbot(if user present => persistence else no persistence)
+
+Controllers:- 1. upload_img...save img in folder, access img from folder and test it against Yolo, then delete the img from folder
+        folder images.....crop1, crop2,crop3,etc
+        backend
+            ...images
+                ...crop1
+                ...crop2
+                ...crop3
+OR 
+with image fet the type of crop, and test the model accordingly
+
+API:- for discussionForum and persistence of chatbot
+
+Validations:- to showcase errors
+
+Utils:- if authentication like JWT,auth0,etc 
+
+
+
+
+
+
+
+
+
+<div class="l3tlg0-6 kkceuK"><button type="button" class="l3tlg0-0 ggoliT"><div class="sc-2xfn8l-0 bWaBkl sc-2wite4-0 itDlvX"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 12v-2h1v2h2v1h-2v2h-1v-2h-2v-1h2zm5 8H6V4H5v17h13v-1zm1 0v2H4V3h2V1h10l5 5v14h-2zM7 2v17h13V6l-4-4H7zm9 0l4 4h-4V2z"></path></svg></div><span class="sc-8s01yt-5 gGeCVP">Choose Files</span></button><button type="button" title="Expand menu" class="l3tlg0-2 gwHGeO"><div class="sc-1gyxcpm-0 hsyQfH" style="width:16px;height:16px"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M13.3333 4L14.6666 5.33333L7.99992 12L1.33325 5.33333L2.66659 4L7.99992 9.5L13.3333 4Z"></path></svg></div></button></div><div class="sc-8s01yt-3 eJIBCe">or drop PDFs here</div></div></label></form></div></div></label></div><div style="display:none" class="sc-10126gd-1 ewIJXS" id="__cond-290511"><div class="sc-12fpl5e-0 fYKoaS"><div class="sc-12fpl5e-1 dKsHux"><div class="sc-6qtu3c-0 hyVhzy"></div></div>
